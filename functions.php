@@ -9,12 +9,12 @@ require_once get_template_directory() . '/lib/init.php';
 // require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-setup.php';
 
 // Defines the child theme
-define( 'CHILD_THEME_NAME', 'Highlight Creative Starter' );
+define( 'CHILD_THEME_NAME', 'Esti Wolo Starter' );
 define( 'CHILD_THEME_URL', 'https://websitename.com/' );
 define( 'CHILD_THEME_VERSION', '1.0' );
 
-add_action( 'wp_enqueue_scripts', 'hct_enqueue_scripts_styles' );
-function hct_enqueue_scripts_styles() {
+add_action( 'wp_enqueue_scripts', 'ewt_enqueue_scripts_styles' );
+function ewt_enqueue_scripts_styles() {
 	
 	wp_enqueue_style(
 		'theme-styles',
@@ -96,7 +96,7 @@ add_editor_style( 'editor-style.css' );
 /** 
  * Gutenberg scripts and styles
  */
-function hct_editor_styling_scripts() {
+function ewt_editor_styling_scripts() {
 
 	wp_enqueue_script(
 		'block-editor', 
@@ -106,13 +106,13 @@ function hct_editor_styling_scripts() {
 		true
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'hct_editor_styling_scripts' );
+add_action( 'enqueue_block_editor_assets', 'ewt_editor_styling_scripts' );
 
 
 
 // Load-hidden class for Scroll Reveal
-add_action( 'wp_head', 'hct_hide_scrollreveal' );
-function hct_hide_scrollreveal() {
+add_action( 'wp_head', 'ewt_hide_scrollreveal' );
+function ewt_hide_scrollreveal() {
 	?>
 	
 	<meta name="theme-color" content="#000">
@@ -135,25 +135,25 @@ function hct_hide_scrollreveal() {
  * Google Analytics
  *
  */
-function hct_google_tag_manager_head() {
+function ewt_google_tag_manager_head() {
 	?>
 	<!-- Google Tag Manager -->
 	
 <?php
 }
-add_action( 'wp_head', 'hct_google_tag_manager_head', 0 ); 
+add_action( 'wp_head', 'ewt_google_tag_manager_head', 0 ); 
 
-function hct_google_tag_manager_body() {
+function ewt_google_tag_manager_body() {
 	?>
 	<!-- Google Tag Manager (noscript) -->
 
 	<?php
 }
-add_action( 'genesis_before', 'hct_google_tag_manager_body', 0 ); 
+add_action( 'genesis_before', 'ewt_google_tag_manager_body', 0 ); 
 
 // Hides site except homepage if you are not logged in. Useful if you like to show clients homepage before the rest of the site is developed.
-// add_action( 'template_redirect', 'hct_in_development_redirect' );
-function hct_in_development_redirect() {
+// add_action( 'template_redirect', 'ewt_in_development_redirect' );
+function ewt_in_development_redirect() {
     $homepage_id = get_option('page_on_front');
     if ( ( ! is_page( $homepage_id ) ) && ! is_user_logged_in() ) {                                                                                  
          wp_redirect( home_url() ); 
