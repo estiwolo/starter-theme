@@ -1,5 +1,5 @@
 # starter-theme
-Genesis starter theme (based on Bill Erickson's Genesis starter and StudioPress's)
+Genesis starter theme (From Penina A - based on Bill Erickson's Genesis starter and StudioPress's)
 
 Change titles and link by "Defines the child theme"
  
